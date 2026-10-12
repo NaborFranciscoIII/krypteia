@@ -73,3 +73,37 @@ SCREENS:
 
 Finish by checking every screen is responsive at 360px, 768px and 1280px widths, and that all buttons and navigation work with mock data.
 ```
+
+---
+
+## Prompt 4 - Home, categories, icons, and fixes
+
+```
+Continue the Krypteia prototype. Keep the same design tokens and style.
+
+1) ADD A "HOME" SCREEN. It is the first tab and the screen shown after unlocking. Navigation becomes: Home, Vault, Generator, Recycle Bin, Settings (5 tabs on mobile, side navigation on wide screens).
+Keep Home lean and uncluttered. Only three sections, no charts, no big statistics:
+- Header: "Home" title with a small line "5 services, 6 accounts".
+- "Needs attention": maximum 4 compact rows, each with an icon, a short label, a count, and a chevron, colored by function:
+  Weak passwords (red), Reused passwords (amber), Recycle Bin items expiring within 7 days (amber), Recovery not set up (amber, only if no recovery method is configured).
+  Rows with a count of zero are hidden. If nothing needs attention, show a calm green "All clear" card. Tapping a row opens the relevant list (weak and reused open a filtered account list).
+- "Recent activity": the last 5 actions (added, edited, deleted, restored) with relative times ("2h ago"), plus a short empty state.
+- Two quick action buttons: "Add service" and "Generate password".
+Make the mock data produce at least one item for each Needs attention row.
+
+2) SERVICE CATEGORIES.
+- Each Service has one category. Default categories: Social, Finance, Work, Shopping, Entertainment, Gaming, Other.
+- Vault screen: horizontally scrollable category filter chips ("All" first) under the search bar. Search and category filter work together.
+- Add/Edit Service form: Service Name, Website URL, Category (select, with "New category" option).
+- Settings > Manage categories: list with add, rename, delete (deleting a category moves its services to "Other").
+
+3) SERVICE ICONS.
+- Replace the letter placeholders with an icon slot that shows a brand logo image when available and falls back to the letter.
+- In the Add/Edit Service form, add an "Icon" row with a preview and options: "Automatic" (default), "Choose image", "Use letter".
+- Add a Settings toggle "Fetch website icons online" (off by default) with a short privacy note: "Looks up icons using the website domain. This tells the icon provider which sites you use."
+- Use simple placeholder logo images for a few mock services (e.g. GitHub, Notion) so the layout can be judged.
+
+4) FIXES AND RULE CHANGE.
+- A Service can have zero accounts: creating a Service only asks for Name, URL and Category. On a Service with no accounts, show an empty state ("No accounts yet") with an "Add account" button. Keep Supercell with zero accounts.
+- On the phone layout, the "Add service" button on the Vault screen overlaps the status bar and notch area. Add top safe-area padding and make the button icon-only on narrow screens.
+```

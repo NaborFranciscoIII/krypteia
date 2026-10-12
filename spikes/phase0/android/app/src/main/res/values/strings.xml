@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KrypteiaSpike</string>
+    <string name="title_activity_main">KrypteiaSpike</string>
+    <string name="package_name">com.krypteia.spike</string>
+    <string name="custom_url_scheme">com.krypteia.spike</string>
+</resources>

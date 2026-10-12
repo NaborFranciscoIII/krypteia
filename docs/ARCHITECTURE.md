@@ -23,14 +23,17 @@ flowchart TD
 ## Data model
 ```mermaid
 erDiagram
-  SERVICE ||--|{ ACCOUNT : has
+  CATEGORY ||--o{ SERVICE : groups
+  SERVICE ||--o{ ACCOUNT : has
   ACCOUNT ||--o{ CREDENTIAL : has
-  SERVICE { string id string title string url }
+  SERVICE { string id string category_id string title string url string icon_source string icon_data }
+  CATEGORY { string id string name string color }
   ACCOUNT { string id string service_id string username string email string account_id string password }
   CREDENTIAL { string id string account_id string type string payload }
+  ACTIVITY { string id string type string entity_type string entity_id string created_at }
   VAULT_META { string kdf_salt string wrapped_dek_by_vault_key string recovery_wraps string version }
 ```
-Every table also has `deleted_at` (null = active, set = in Recycle Bin). Rules: a service has 1+ accounts; an account has 0+ credentials. Sensitive fields are stored encrypted. `type` examples: `passkey`, `security_question`, `other`.
+ACTIVITY powers Home > Recent activity (stores ids, not names; encrypted; capped at 50). Every other table also has `deleted_at` (null = active, set = in Recycle Bin). Rules: a service has 0+ accounts (it starts with none); an account has 0+ credentials. Sensitive fields are stored encrypted. `type` examples: `passkey`, `security_question`, `other`.
 
 ## Unlock flow
 ```mermaid

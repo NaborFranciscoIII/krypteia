@@ -3,12 +3,13 @@
 Check items off as we go. Each phase ends with something testable.
 
 ## Phase 0 - Foundation
-- [ ] GitHub repo + this docs folder committed
+- [x] GitHub repo + this docs folder committed
 - [ ] Confirm V1 scope (FEATURES.md) and security decisions (SECURITY.md)
 - [ ] Spikes: Argon2id in Android WebView, SQLite via Capacitor, passkey key-derivation support
 
 ## Phase 1 - Prototype (Figma Make)
 - [ ] Run the 3 prompts in docs/FIGMA_PROMPTS.md in order, reviewing after each
+- [ ] Run Prompt 4 (Home dashboard, categories, icons, fixes)
 - [ ] Screens: tutorial, create Vault Key, unlock, service list, service detail, account form, credential form, generator, settings, change key, recovery setup
 - [ ] Apply DESIGN.md tokens
 - [ ] Review and approve prototype
@@ -28,10 +29,13 @@ Check items off as we go. Each phase ends with something testable.
 
 ## Phase 4 - Data Manager
 - [ ] Encrypted SQLite schema
+- [ ] Categories (defaults + custom) and filter chips
 - [ ] Services CRUD
+- [ ] Service icons: bundled pack, custom image, optional online fetch with encrypted cache
 - [ ] Accounts CRUD (one-to-many)
 - [ ] Credentials CRUD
 - [ ] Search and reveal/copy behavior
+- [ ] Activity log + Home dashboard (needs attention, recent activity, quick actions)
 - [ ] Recycle Bin: soft delete, restore, permanent delete (Vault Key required)
 - [ ] Auto-purge on unlock + auto-purge notice in delete confirmation
 - [ ] Clipboard auto-clear
@@ -39,6 +43,7 @@ Check items off as we go. Each phase ends with something testable.
 ## Phase 5 - Tools
 - [ ] Password generator
 - [ ] Strength indicator (zxcvbn-ts) wired into account form
+- [ ] Weak and reused password detection (in memory, after unlock)
 
 ## Phase 6 - Settings and recovery
 - [ ] Change Vault Key

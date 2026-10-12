@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+# Android signing - never commit
+*.jks
+*.keystore
+keystore.properties
+# Android build output
+android/app/build/
+android/.gradle/
+android/local.properties
+.idea/
+.DS_Store

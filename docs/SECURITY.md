@@ -38,6 +38,18 @@ Apps cannot export private keys of passkeys made elsewhere. The "Passkey" creden
 - One-time tutorial popup plus inline tips on create and change.
 - Warn clearly: forgotten key and no recovery means the data cannot be recovered.
 
+## Activity log (Home > Recent activity)
+- Encrypted like all vault data. Stores action type and item id, never item names or secrets.
+- Entries for a permanently deleted item are removed.
+- Never log password reveals or copied values.
+- Needs-attention checks (weak, reused) run in memory after unlock only; results are never stored.
+
+## Service icons and privacy
+- Fetching a website icon online tells that third party which sites you have accounts on, and shares your IP address. So online fetching is **opt-in** (setting, off by default, with a plain explanation).
+- Bundled brand icons and letter fallbacks work fully offline with no network calls.
+- Fetched icons are cached inside the encrypted vault database, never as loose files.
+- Never send anything except the bare domain name; no usernames, no paths.
+
 ## Recycle Bin
 - Soft delete (`deleted_at`). Data stays encrypted while in the Recycle Bin.
 - Permanent delete requires the Vault Key.
