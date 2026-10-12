@@ -12,7 +12,7 @@
 5. **Dark navy theme** - only theme, no light mode toggle.
 6. **First-time tutorial** - replayable from Settings.
 7. **Change Vault Key** - confirm old key, then set new key.
-8. **Vault Key recovery settings** - set up / update recovery methods.
+8. **Vault Key recovery settings** - set up / update recovery methods. V1 methods: **Recovery Key** (generated, strong) and **Security Questions** (weaker). Passkey recovery is a V2 placeholder.
 
 9. **Auto-lock** - vault locks when the app goes to the background.
 10. **Clipboard auto-clear** - copied passwords are cleared after a short delay.
@@ -24,6 +24,7 @@
 - Have I Been Pwned breach notifications
 - Import / Export (includes encrypted backup)
 - Recycle Bin expiry notifications: alert the user when items are close to auto-deletion so they can decide whether to restore them
+- Passkey recovery (needs a native Android plugin; WebAuthn is unavailable in the WebView, confirmed in the Phase 0 spike)
 
 ## Future versions
 - Biometric unlock

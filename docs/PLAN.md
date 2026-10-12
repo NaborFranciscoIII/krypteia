@@ -3,15 +3,15 @@
 Check items off as we go. Each phase ends with something testable.
 
 ## Phase 0 - Foundation
-- [ ] GitHub repo + this docs folder committed
-- [ ] Confirm V1 scope (FEATURES.md) and security decisions (SECURITY.md)
-- [ ] Spikes: Argon2id in Android WebView, SQLite via Capacitor, passkey key-derivation support
+- [x] GitHub repo + this docs folder committed
+- [x] Confirm V1 scope (FEATURES.md) and security decisions (SECURITY.md)
+- [x] Spikes: Argon2id ~330 ms PASS, SQLite via Capacitor PASS, passkey FAIL (WebAuthn unavailable in Android WebView). Decision: passkey recovery moves to V2; V1 uses Security Questions + Recovery Key
 
 ## Phase 1 - Prototype (Figma Make)
-- [ ] Run the 3 prompts in docs/FIGMA_PROMPTS.md in order, reviewing after each
-- [ ] Screens: tutorial, create Vault Key, unlock, service list, service detail, account form, credential form, generator, settings, change key, recovery setup
-- [ ] Apply DESIGN.md tokens
-- [ ] Review and approve prototype
+- [x] Run the 3 prompts in docs/FIGMA_PROMPTS.md in order, reviewing after each
+- [x] Screens: tutorial, create Vault Key, unlock, service list, service detail, account form, credential form, generator, settings, change key, recovery setup
+- [x] Apply DESIGN.md tokens
+- [x] Review and approve prototype
 
 ## Phase 2 - Project setup
 - [ ] Export Figma Make code, run in VS Code
@@ -42,12 +42,12 @@ Check items off as we go. Each phase ends with something testable.
 
 ## Phase 6 - Settings and recovery
 - [ ] Change Vault Key
+- [ ] Recovery setup: Recovery Key (generated, shown once, user stores it outside the app)
 - [ ] Recovery setup: security questions
-- [ ] Recovery setup: passkey
-- [ ] Recovery flow (reset Vault Key)
+- [ ] Recovery flow (reset Vault Key via Recovery Key or security questions)
 - [ ] Tutorial + replay from Settings
 - [ ] Vault Key guidance popup on create and change
-- [ ] V2 placeholders (HIBP, Import/Export) disabled
+- [ ] V2 placeholders (HIBP, Import/Export, Passkey recovery) disabled
 
 ## Phase 7 - Test and release
 - [ ] Full feature test checklist on device

@@ -25,9 +25,18 @@ Recovery method verified -> unwrap DEK internally -> user sets new Vault Key -> 
 - Attempt limits with increasing delay.
 - Warn the user these are weaker than the Vault Key.
 
-### Passkeys
-- Needs the WebAuthn PRF extension (or native Android Credential Manager) to derive a key.
-- **To verify in Phase 0 spike** whether Capacitor's Android WebView supports this. Fallback: native plugin.
+### Recovery Key (strong)
+- Random 256-bit key from `crypto.getRandomValues`, shown as grouped characters (e.g. Base32 in blocks of 4-5).
+- Derives a wrapping key (HKDF-SHA256; no slow KDF needed since it is already high entropy) that wraps the DEK. Only the wrapped DEK is stored, never the key.
+- Shown **once** at creation. User must confirm they stored it (e.g. re-enter two requested groups).
+- User stores it outside Krypteia (paper, a different password manager). Never saved in the app, logs, or clipboard history.
+- Screenshots are blocked (FLAG_SECURE), so the user writes it down or copies it into another app.
+- Regenerating requires the Vault Key and invalidates the old key.
+- Treat it like the vault itself: anyone holding it can reset the Vault Key.
+
+### Passkey recovery (deferred to V2)
+- Phase 0 spike result: **FAIL**. WebAuthn is not available in the Android WebView, so passkey key derivation cannot be done in the web layer.
+- Future option: native Android Credential Manager plugin. Passkeys are tied to a website domain, and an offline app has none, so this needs a domain setup (Digital Asset Links) and PRF support must be verified.
 
 ## Credential data note
 Apps cannot export private keys of passkeys made elsewhere. The "Passkey" credential type stores
@@ -47,6 +56,7 @@ Apps cannot export private keys of passkeys made elsewhere. The "Passkey" creden
 ## Accepted risks (V1)
 - No backup, no device-loss handling (planned: backup in V2, device loss later).
 - No biometric unlock (future version).
+- Losing both the Vault Key and the Recovery Key (with no usable security questions) means permanent data loss.
 
 ## Session
 - Auto-lock when the app goes to the background; DEK cleared.

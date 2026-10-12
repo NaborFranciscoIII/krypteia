@@ -1,0 +1,10 @@
+{
+  "description": "Manage your credentials securely with a sleek vault and credential manager, featuring a user-friendly interface and robust recovery options.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
